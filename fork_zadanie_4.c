@@ -19,8 +19,7 @@ int main ()
  printf("Czekam na zakonczenie potomka...\n");
  sleep(1);
  }
- exit_status = WEXITSTATUS(status); //wyciagniecie wartosci ze zwracanej przez
-waitpid
+ exit_status = WEXITSTATUS(status); //wyciagniecie wartosci ze zwracanej przez waitpid
  printf("Potomek %d zakonczyl dzialanie zwracajac %d\n", pid, exit_status);
  return 0;
 }
