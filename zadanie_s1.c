@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	if (argc == 3)
     {
 
-        if (argv[1] == "IGNORE") { 
+        if (argv[1] == std::string("IGNORE")) { 
             printf("%s\n", argv[1]);
         	signal(SIGINT, SIG_IGN); }
         if (argv[1] == "USER") { signal(argv[2], my_sig); }
