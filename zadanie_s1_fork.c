@@ -15,13 +15,14 @@ int main(int argc, char* argv[])
 		{
 			printf("Uruchomienie nie powiodlo sie\n");
 		}
-		printf ("PID procesu potomnego: %d\n", (int) x);
+		
 		
 
 	}
 	else
 	{
-	    kill(x, SIGINT); 
+		printf ("PID procesu potomnego: %d\n", (int) x);~
+	    //kill(x, SIGINT); 
 		waitpid(x, NULL, 0);
 		printf("[%u]: zadanie_s1 zakonczony\n", mojpid);
 	}
