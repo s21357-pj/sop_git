@@ -7,8 +7,7 @@
 
 void my_sig(int sig) {
 	printf("Dostalem signal\n");
-	return 0;
-	//exit(EXIT_SUCCESS);
+	exit(EXIT_SUCCESS);
 }
 
 int main(int argc, char **argv)
