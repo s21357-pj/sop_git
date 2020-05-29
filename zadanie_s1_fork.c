@@ -15,6 +15,7 @@ int main(int argc, char* argv[])
 		{
 			printf("Uruchomienie nie powiodlo sie\n");
 		}
+		kill(x, 2); 
 
 	}
 	else
