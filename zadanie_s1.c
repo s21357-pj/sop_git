@@ -12,10 +12,9 @@ void my_sig(int sig) {
 
 int main(int argc, char **argv)
 {
-	signal(SIGINT, SIG_IGN);
 	if (argc == 3)
     {
-        if (argv[1] == "IGNORE") { signal(2, SIG_IGN); }
+        if (argv[1] == "IGNORE") { signal(SIGINT, SIG_IGN); }
         if (argv[1] == "USER") { signal(argv[2], my_sig); }
         if (argv[1] == "DEFAULT") { signal(argv[2], SIG_DFL); }
     }
