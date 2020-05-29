@@ -12,14 +12,11 @@ void my_sig(int sig) {
 
 int main(int argc, char **argv)
 {
-	if (argc == 3)
+	if (argc == 2)
     {
-
-        if (strcmp(argv[1], "IGNORE") == 0) { 
-            printf("%s\n", argv[1]);
-        	signal(SIGINT, SIG_IGN); }
-        if (argv[1] == "USER") { signal(argv[2], my_sig); }
-        if (argv[1] == "DEFAULT") { signal(argv[2], SIG_DFL); }
+        if (strcmp(argv[1], "IGNORE") == 0) { signal(SIGINT, SIG_IGN); }
+        if (strcmp(argv[1], "USER") == 0) { signal(SIGINT, my_sig); }
+        if (strcmp(argv[1], "DEFAULT") == 0) { signal(SIGINT, SIG_DFL); }
     }
     if (pause() < 0){
        perror("ERROR: sygnal nie powoduje zakonczenia procesu");
