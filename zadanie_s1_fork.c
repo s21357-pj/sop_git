@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 		{
 			printf("Uruchomienie nie powiodlo sie\n");
 		}
-		printf ("PID procesu potomnego: %d\n", (int) xł);
+		printf ("PID procesu potomnego: %d\n", (int) x);
 		kill(x, 2); 
 
 	}
