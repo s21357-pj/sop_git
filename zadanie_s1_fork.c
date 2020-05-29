@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 	x = fork();
 	if (x == 0)
 	{
-		if (execl("/home/PJWSTK/s21357/SOP_C/sop_git/zadanie_s1", "zadanie_s1", "USER", NULL) == -1)
+		if (execl("/home/PJWSTK/s21357/SOP_C/sop_git/zadanie_s1", "zadanie_s1", "IGNORE", NULL) == -1)
 		{
 			printf("Uruchomienie nie powiodlo sie\n");
 		}
@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-	    //kill(x, 2); 
+	    kill(x, 2); 
 		waitpid(x, NULL, 0);
 		printf("[%u]: zadanie_s1 zakonczony\n", mojpid);
 	}
