@@ -6,7 +6,7 @@
 #include <sys/errno.h>
 
 void my_sig(int sig) {
-	printf("Dostalem signal\n", );
+	printf("Dostalem signal\n");
 	exit(EXIT_SUCCESS);
 }
 
