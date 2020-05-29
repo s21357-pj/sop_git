@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 	else
 	{
 		printf ("PID procesu potomnego: %d\n", (int) x);
-	    //kill(x, SIGINT); 
+	    kill(x, SIGINT); 
 		waitpid(x, NULL, 0);
 		printf("[%u]: zadanie_s1 zakonczony\n", mojpid);
 	}
