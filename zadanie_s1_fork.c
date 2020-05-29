@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <signal.h>
 int main(int argc, char* argv[])
 {
 	pid_t mojpid, x;
@@ -14,6 +15,7 @@ int main(int argc, char* argv[])
 		{
 			printf("Uruchomienie nie powiodlo sie\n");
 		}
+
 	}
 	else
 	{
