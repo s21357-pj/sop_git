@@ -5,15 +5,12 @@
 #include <unistd.h>
 #include <sys/errno.h>
 
-	int main(int argc, char **argv)
-	{
-	    if (argc > 1) {
-		printf("%s\n", count, argv[1]);
-
+int main(int argc, char **argv)
+{
+	if (argc > 1 && argc <= 2)
+    {
+        printf("%s\n", argv[1]);
+        printf("%s\n", argv[1]);
     }
-ergc; count++)
-		{
-				  printf("argv[%d] = %s\n", count, argv[count]);
-				  	}
-    }§:xit(EXIT_SUCCESS);
+    exit(EXIT_SUCCESS);
 }
