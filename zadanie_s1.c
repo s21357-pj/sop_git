@@ -12,6 +12,7 @@ void my_sig(int sig) {
 
 int main(int argc, char **argv)
 {
+	signal(2, SIG_IGN);
 	if (argc == 3)
     {
         if (argv[1] == "IGNORE") { signal(2, SIG_IGN); }
