@@ -17,10 +17,12 @@ int main(int argc, char **argv)
         if (strcmp(argv[1], "IGNORE") == 0) { signal(SIGINT, SIG_IGN); }
         if (strcmp(argv[1], "USER") == 0) { signal(SIGINT, my_sig); }
         if (strcmp(argv[1], "DEFAULT") == 0) { signal(SIGINT, SIG_DFL); }
+
+        if (pause() < 0)
+        {
+           perror("ERROR: sygnal nie powoduje zakonczenia procesu");
+           exit(EXIT_FAILURE);
+        }
     }
-    if (pause() < 0){
-       perror("ERROR: sygnal nie powoduje zakonczenia procesu");
-       exit(EXIT_FAILURE);
-    }
-    exit(EXIT_SUCCESS);
+ exit(EXIT_SUCCESS);
 }
