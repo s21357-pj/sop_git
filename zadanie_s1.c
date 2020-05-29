@@ -7,6 +7,6 @@
 
 int main(int argc, char **argv)
 {
-    printf("%s\n", *argv[0]);
+    printf("%f\n", argc);
     exit(EXIT_SUCCESS);
 }
