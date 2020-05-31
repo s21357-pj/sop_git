@@ -3,8 +3,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
+
+void my_sig(int sig) {
+	printf("Otrzymałem SIGUSR2 od innego procesu\n");
+	exit(EXIT_SUCCESS);
+}
+
 int main(int argc, char* argv[])
 {
+	char line[1024];
 	pid_t mojpid, x, myppid;
 	mojpid = getpid();
     myppid = getppid();
@@ -31,11 +38,16 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
+		printf("Jestem procesem macierzystym\n");
+		printf("ID procesu: %u\n", mojpid);
 		printf ("PID procesu potomnego: %d\n", (int) x);
-		sleep(5);
-	    kill(x, SIGINT); 
+		if (signal(SIGUSR2, my_sig) == SIG_ERR) {
+			printf("Funkcja signal ma problem z SIGUSR2.");
+		}
 		waitpid(x, NULL, 0);
-		printf("[%u]: zadanie_s1 zakonczony\n", mojpid);
+	    sleep(15);
+	    printf ("Press any key...");
+	    scanf("%[^\n]", line);
 	}
 	return 0;
 }
