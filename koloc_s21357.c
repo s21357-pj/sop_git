@@ -14,12 +14,12 @@ int main(int argc, char* argv[])
     gid_t gid, geid;
     gid = getgid();
     geid = getegid();
-	printf("ID procesu: %n\n", mojpid);
-    printf("ID procesu rodzica: %n\n", myppid);
-	printf("ID rzeczywiste użytkownika: %n\n", myuid);
-    printf("ID efektywne użytkownika: %n\n", myeuid);
-    printf("ID rzeczywiste grupy: %n\n", gid);
-    printf("ID efektywne grupy: %n\n", geid);
+	printf("ID procesu: %u\n", mojpid);
+    printf("ID procesu rodzica: %u\n", myppid);
+	printf("ID rzeczywiste użytkownika: %u\n", myuid);
+    printf("ID efektywne użytkownika: %u\n", myeuid);
+    printf("ID rzeczywiste grupy: %u\n", gid);
+    printf("ID efektywne grupy: %u\n", geid);
 	x = fork();
 	if (x == 0)
 	{
