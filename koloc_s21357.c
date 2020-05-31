@@ -44,13 +44,12 @@ int main(int argc, char* argv[])
 		printf ("PID procesu potomnego: %d\n", (int) x);
 		if (signal(SIGUSR2, my_sig) == SIG_ERR) {
 			printf("Funkcja signal ma problem z SIGUSR2.");
-		}	
-		waitpid(x, NULL, 0);
-
+		}
 
 	    sleep(15);
 	    printf ("Press any key...");
 	    scanf("%[^\n]", line);
+	    
 	}
 	return 0;
 }
