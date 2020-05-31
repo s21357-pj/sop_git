@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
     myeuid = geteuid();
     gid_t gid, geid;
     gid = getgid();
-    geid = getegid(void);
+    geid = getegid();
 	printf("ID procesu: %n\n", mojpid);
     printf("ID procesu rodzica: %n\n", myppid);
 	printf("ID rzeczywiste użytkownika: %n\n", myuid);
